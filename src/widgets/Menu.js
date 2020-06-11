@@ -13,11 +13,12 @@ export default class Menu extends Lightning.Component {
                 },
                 Series: {
                     type: MenuItem,
-                    label: "Series", id: "tv"
+                    //label: "Series", id: "tv"
+                    label: "Series", id: "series"
                 },
                 Exit: {
                     type: MenuItem,
-                    label: "Exit", id: "exit"
+                    label: "Exit", id: "splash"
                 }
             },
             Focus: {
@@ -36,6 +37,7 @@ export default class Menu extends Lightning.Component {
     }
 
     get activeItem() {
+
         return this.tag("Items").children[this._index];
     }
 
@@ -88,6 +90,8 @@ export default class Menu extends Lightning.Component {
          * ---
          * so based on focused menu item.
          */
+        console.log(this.activeItem);
+        Router.navigate(this.activeItem._id);
     }
 
     _getFocused(){

@@ -4,6 +4,14 @@ import {List} from "../components";
 export default class Main extends Lightning.Component{
     static _template() {
         return {
+            Background : {
+                rect: true,
+                colorTop: 0xff0F2027,
+                colorBottom: 0xff2C5364,
+                zIndex: -1,
+                w: 1900,
+                h: 1080,
+            },
             List: {
                 x: 100, y: 560, zIndex: 3,
                 type: List

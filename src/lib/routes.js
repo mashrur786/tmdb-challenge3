@@ -27,6 +27,7 @@ export default () =>{
      *
      * You also need to add the proper data-provider
      */
+    Router.route('series', Main);
 
 
     Router.start();

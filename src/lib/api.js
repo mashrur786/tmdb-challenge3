@@ -13,12 +13,27 @@ export const init = (stageInstance) =>{
  * https://api.themoviedb.org/3/movie/popular
  * and return the data
  */
+export const getSeries = async()=> {
+    const movies = await get(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`);
+    const {results = []} = movies;
+
+    if(results.length){
+        return results.map((data)=>{
+            return new Movie(data);
+        });
+    }
+
+    return [];
+};
+
+
 export const getMovies = async()=> {
     const movies = await get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
     const {results = []} = movies;
 
     if(results.length){
         return results.map((data)=>{
+            console.log(data);
             return new Movie(data);
         });
     }
